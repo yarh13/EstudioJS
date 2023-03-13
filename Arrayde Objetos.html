@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array de Objetos</title>
+</head>
+<body>
+        <script>
+            const web = {//objeto padre
+                nombre:'bluuweb',
+                links:{ //objeto hijo 1 
+                    enlace: 'www.bluuweb.cl'
+                },
+                redesSociales:{//objeto hijo 2 
+                    youtube:{// objeto hijo 1 del objeto hijo 2
+                        enlace:'youtube.com',
+                        nombre:'bluuweb yt'
+                    },
+                    facebook:{// objeto hijo 2 del objeto hijo 2
+                        enlace:'facebook.com',
+                        nombre:'bluuweb fb'
+                    }
+                }
+            }
+            
+            const enlaceYoutube = web.redesSociales.youtube.enlace
+            const enlaceYoutube2 = web.redesSociales.youtube.nombre
+
+            console.log(enlaceYoutube)
+
+            // con este me todo de destructing Objects es mas sencillo poder acceder a las propiedades sin necesidad de declarar constantes por cada una
+            const {enlace, nombre} = web.redesSociales.youtube
+            console.log(enlace)
+            console.log(nombre)
+
+        </script>
+</body>
+</html>

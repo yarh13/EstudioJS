@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <script>
+        /*proporciona una interfaz JS para acceder y manipular partes del canal HTTP
+        tales como peticiones y respuestas, tambien provee un método global fetch()
+        que proporciona una forma facil y logica de obtener recursos de forma asincronica por la red */
+
+        //podemos consumir api por fetch, respuesta del servidor que nos va dando datos que podemos utilizar en el sitio web
+        //existen apis publicas y otras privadas con clave de acceso, donde se registra y devulve el apikey
+        //con fetch(), podemos leer imagenes, archivos JSON que esten en local etc
+
+        fetch('https://pokeapi.co/api/v2/pokemon/')
+        .then(res => res.json()//espera una promesa(espera que el fetch devuelva la informacion)
+            
+        )
+
+        .then(data => {
+            // console.log(data.results)
+            data.results.forEach(element => {
+                console.log(element.name)
+            });
+        })
+
+        .catch(error =>console.log(error))
+
+        
+
+        
+    </script>
+</body>
+</html>

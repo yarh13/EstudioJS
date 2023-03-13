@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map()</title>
+</head>
+<body>
+    <script>
+            fetch('https://pokeapi.co/api/v2/pokemon/')
+        .then(res => res.json())//espera una promesa(espera que el fetch devuelva la informacion)
+
+        .then(data => {
+            // console.log(data.results)
+            let arrayNombres = []
+            data.results.forEach(element => {
+                // console.log(element.name)
+                arrayNombres.push(element.name)
+             });
+            //  console.log(arrayNombres)
+         })
+
+        .catch(error =>console.log(error))
+
+
+        const obtenerPokemones = async() => {
+            try {
+                const res = await fetch('https://pokeapi.co/api/v2/pokemon/')// ace la misma funcion del them(), esperar una peticion de fetch()
+                const data = await res.json()
+                //  console.log(data.results)
+                 const arrayNombres = data.results.map(poke => poke.name)
+                 console.log(arrayNombres)
+                
+                
+            } catch (error) {//muestra el error 
+                console.log(error)
+            }
+        }
+        obtenerPokemones();
+    </script>
+</body>
+</html>

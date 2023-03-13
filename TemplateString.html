@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template String</title>
+</head>
+<body>
+    <script>
+        const numero = (num1, num2) =>( 
+            //para usar el template string utilizamos las comillas invertidas ``, para meszclar string con JS en un mensaje
+            //para colocar logica JS la colocamos dentro de ${......}
+            `El número es : ${num1 + num2}`
+        )
+        //utilizando los () retornamos todo lo que halla dentro de ellos sin necesidad de la palabra return
+    
+        const resultado = numero(10,20)
+        console.log(resultado);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async & Await</title>
+</head>
+<body>
+    <script>
+        // fetch('https://pokeapi.co/api/v2/pokemon/')
+        // .then(res => res.json()//espera una promesa(espera que el fetch devuelva la informacion)
+            
+        // )
+
+        // .then(data => {
+            // console.log(data.results)
+            // data.results.forEach(element => {
+                // console.log(element.name)
+            // });
+        // })
+
+        // .catch(error =>console.log(error))
+
+        //async await
+        //async debe de estar antes de la funcion de flecha
+        //await solo funciona cuando esta dentro de una función async
+
+        const obtenerPokemones = async() => {
+            try {
+                const res = await fetch('https://pokeapi.co/api/v2/pokemon/')// ace la misma funcion del them(), esperar una peticion de fetch()
+                const data = await res.json()
+                data.results.forEach(element => {
+                    console.log(element.name)
+                });
+                
+            } catch (error) {//muestra el error 
+                console.log(error)
+            }
+        }
+        obtenerPokemones();
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Filter()</title>
+</head>
+<body>
+    <script>
+        const obtenerPokemones = async() => {
+            try {
+                const res = await fetch('https://pokeapi.co/api/v2/pokemon/')// ace la misma funcion del them(), esperar una peticion de fetch()
+                const data = await res.json()
+                //  console.log(data.results)
+                 const arrayNombres = data.results.filter(poke => poke.name !== 'bulbasaur')
+                 console.log(arrayNombres)
+                
+                
+            } catch (error) {//muestra el error 
+                console.log(error)
+            }
+        }
+        obtenerPokemones();
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <script>
+        const mascota = {
+            nombre:'Tom',
+            edad: 10,
+            vivo: true,
+            razas: ['peludo', 'negro']
+
+            //se pueden conbinar los tipos de datos en los objetos, se pueden crear array iclusive otro objeto
+        }
+
+        console.log(mascota);
+        console.log(mascota.nombre);
+        console.log(mascota.edad);
+        console.log(mascota.vivo);
+
+        mascota.id = 1 //asignar una nueva propiedad al objeto, esto se hace por fuera de el 
+        console.log(mascota.id);
+        console.log(mascota.razas);
+    </script>
+</body>
+</html>
